@@ -135,6 +135,50 @@ body {
   outline-offset: 2px;
 }
 
+/* L'Oréal brand colors */
+:root {
+  --loreal-red: #ff003b;
+  --loreal-gold: #e3a535;
+}
+
+/* Use L'Oréal red for main buttons and highlights */
+.generate-btn,
+.chat-form button {
+  background: var(--loreal-red);
+  color: #fff;
+  border: none;
+}
+
+.generate-btn:hover,
+.chat-form button:hover {
+  background: var(--loreal-gold);
+  color: #fff;
+}
+
+/* Use L'Oréal red for selected product border */
+.product-card.selected {
+  border: 2px solid var(--loreal-red);
+  background-color: #fff6f8;
+  box-shadow: 0 0 10px #ff003b22;
+}
+
+/* Use L'Oréal gold for "Clear All" button */
+#clearSelectionsBtn {
+  background: var(--loreal-gold) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+#clearSelectionsBtn:hover {
+  background: var(--loreal-red) !important;
+  color: #fff !important;
+}
+
+/* Accent for product name in selected card */
+.product-card.selected h3 {
+  color: var(--loreal-red);
+}
+
 /* visually hidden */
 .visually-hidden {
   position: absolute;
@@ -252,4 +296,59 @@ body {
 
 .generate-btn i {
   margin-right: 8px;
+}
+
+/* RTL support: add a class to <body> or <html> for RTL mode */
+body.rtl, html.rtl {
+  direction: rtl;
+}
+
+/* Flip flex directions for RTL */
+body.rtl .products-grid,
+html.rtl .products-grid {
+  flex-direction: row-reverse;
+}
+
+body.rtl .selected-products,
+html.rtl .selected-products {
+  text-align: right;
+}
+
+body.rtl .chatbox,
+html.rtl .chatbox {
+  text-align: right;
+}
+
+body.rtl .chat-window,
+html.rtl .chat-window {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .chat-form,
+html.rtl .chat-form {
+  flex-direction: row-reverse;
+}
+
+body.rtl .product-card,
+html.rtl .product-card {
+  flex-direction: row-reverse;
+}
+
+body.rtl .product-info,
+html.rtl .product-info {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Adjust placeholder message for RTL */
+body.rtl .placeholder-message,
+html.rtl .placeholder-message {
+  text-align: right;
+}
+
+/* Adjust Clear All button for RTL */
+body.rtl #clearSelectionsBtn,
+html.rtl #clearSelectionsBtn {
+  float: left;
 }
